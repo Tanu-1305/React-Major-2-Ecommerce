@@ -125,4 +125,5 @@ export const products = [
         discount: 'Minimum 50% Off', 
         tagline: 'Grab Now!' 
     }
+    
 ];

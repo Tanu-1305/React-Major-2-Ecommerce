@@ -1,7 +1,5 @@
 import { useState, useContext } from 'react';
-
 import { Dialog, Box, TextField, Typography, Button, styled } from '@mui/material';
-
 import { authenticateSignup, authenticateLogin } from '../../service/api';
 import { DataContext } from '../../context/DataProvider';
 
@@ -12,7 +10,7 @@ const Component = styled(Box)`
 
 const Image = styled(Box)`
  background: #2874f0 url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png) center 85% no-repeat;
- height: 82%;
+ height: 83%;
  width: 28%;
  padding: 45px 35px;
  & > p, & > h5 {
@@ -102,8 +100,7 @@ const LoginDialog = ({ open, setOpen }) => {
    const [signup, setSignup] = useState(signupInitialValues);
    const [login, setLogin] = useState(loginInitialValues);
    const [error, setError] = useState(false);
-
-    const { setAccount } = useContext(DataContext);
+   const { setAccount } = useContext(DataContext);
 
    const handleClose = () => {
     setOpen(false);
@@ -115,7 +112,7 @@ const LoginDialog = ({ open, setOpen }) => {
     toggleAccount(accountInitialValues.signup);
    }
 
-   const onInputchange = (e) => {
+   const onInputChange = (e) => {
     setSignup({ ...signup, [e.target.name]: e.target.value });
    }
 
@@ -152,9 +149,7 @@ const LoginDialog = ({ open, setOpen }) => {
             { 
             account.view === 'login' ?
                 <Wrapper>
-                
                 <TextField variant="standard" onChange={(e) => onValueChange(e)} name='username' label="Enter Username" />
-                
                 { error && <Error>Please enter valid username or password</Error> }
                 
                 <TextField variant="standard" onChange={(e) => onValueChange(e)} name='password' label="Enter Password" />
@@ -167,12 +162,12 @@ const LoginDialog = ({ open, setOpen }) => {
                 </Wrapper>
             :
                 <Wrapper>
-                <TextField variant="standard" onChange={(e) => onInputchange(e)} name='firstname' label="Enter Firstname" />
-                <TextField variant="standard" onChange={(e) => onInputchange(e)} name='lastname' label="Enter Lastname" />
-                <TextField variant="standard" onChange={(e) => onInputchange(e)} name='username' label="Enter Username" />
-                <TextField variant="standard" onChange={(e) => onInputchange(e)} name='email' label="Enter Email" />
-                <TextField variant="standard" onChange={(e) => onInputchange(e)} name='password' label="Enter Password" />
-                <TextField variant="standard" onChange={(e) => onInputchange(e)} name='phone' label="Enter Phone" />
+                <TextField variant="standard" onChange={(e) => onInputChange(e)} name='firstname' label="Enter Firstname" />
+                <TextField variant="standard" onChange={(e) => onInputChange(e)} name='lastname' label="Enter Lastname" />
+                <TextField variant="standard" onChange={(e) => onInputChange(e)} name='username' label="Enter Username" />
+                <TextField variant="standard" onChange={(e) => onInputChange(e)} name='email' label="Enter Email" />
+                <TextField variant="standard" onChange={(e) => onInputChange(e)} name='password' label="Enter Password" />
+                <TextField variant="standard" onChange={(e) => onInputChange(e)} name='phone' label="Enter Phone" />
                 <LoginButton onClick={() => signupUser()}>Continue</LoginButton>
 
 

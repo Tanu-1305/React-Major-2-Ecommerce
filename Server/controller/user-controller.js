@@ -35,6 +35,6 @@ export const userLogin = async(request, response) => {
       }
 
    } catch (error) {
-      response.status(500).json('Error', error.message);
+      response.status(500).json('Error ', error.message);
    }
 }
